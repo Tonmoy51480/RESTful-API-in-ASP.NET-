@@ -1,0 +1,42 @@
+@HotelBookingAPI_HostAddress = http://localhost:5139
+
+### Get all bookings
+GET {{HotelBookingAPI_HostAddress}}/api/HotelBooking/GetAll
+Accept: application/json
+
+###
+
+### Create a new booking
+POST {{HotelBookingAPI_HostAddress}}/api/HotelBooking/CreateEdit
+Content-Type: application/json
+
+{
+  "roomNumber": 101,
+  "clientName": "John Doe"
+}
+
+###
+
+### Get booking by ID
+GET {{HotelBookingAPI_HostAddress}}/api/HotelBooking/Get?id=1
+Accept: application/json
+
+###
+
+### Update an existing booking
+POST {{HotelBookingAPI_HostAddress}}/api/HotelBooking/CreateEdit
+Content-Type: application/json
+
+{
+  "id": 1,
+  "roomNumber": 102,
+  "clientName": "John Doe"
+}
+
+###
+
+### Delete a booking by ID
+DELETE {{HotelBookingAPI_HostAddress}}/api/HotelBooking/Delete?id=1
+Accept: application/json
+
+###
