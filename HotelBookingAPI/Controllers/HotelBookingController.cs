@@ -37,5 +37,24 @@ namespace HotelBookingAPI.Controllers
             _context.SaveChanges();
             return new JsonResult(Ok(booking));
         }
+
+        // Get booking by id
+        [HttpGet]
+        public JsonResult Get(int id)
+        {
+            var result = _context.Bookings.Find(id);
+            if (result == null)
+                return new JsonResult(NotFound());
+
+            return new JsonResult(Ok(result));
+        }
+
+        // Get all bookings
+        [HttpGet]
+        public JsonResult GetAll()
+        {
+            var result = _context.Bookings.ToList();
+            return new JsonResult(Ok(result));
+        }
     }
 }
